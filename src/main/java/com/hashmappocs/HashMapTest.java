@@ -1,10 +1,13 @@
 package com.hashmappocs;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class HashMapTest {
 public static void main(String[] args) {
@@ -54,6 +57,25 @@ public static void main(String[] args) {
     map.entrySet().stream().forEach(e ->
     System.out.println("Key : " + e.getKey().getmarks() + " value : " + e.getValue())
 );
+    
+    //students objects converting to map to List type
+    List<Student> keyList = new ArrayList(map.keySet());
+
+    //List<String> valueList = new ArrayList(map.values());
+   System.out.println("---------LIST----------");
+   for(Student s: keyList) {
+	   System.out.println(s.getmarks()+" "+s.getname());
+   }
+   
+   
+   //converting the map to List using java 8
+   List<Student> kl = map.keySet().stream().collect(Collectors.toList());
+   System.out.println("Student dat converting map to list");
+   //List<String> vl = map.values().stream().collect(Collectors.toList());
+   
+   for(Student s: kl) {
+	   System.out.println(s.getmarks()+" "+s.getname());
+   }
 }
 
 }

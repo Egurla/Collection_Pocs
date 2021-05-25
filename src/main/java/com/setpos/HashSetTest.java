@@ -27,14 +27,17 @@ public class HashSetTest
 		set.add(p5);
 		set.add(p6);
 		
-		
-		
 		Iterator<Product> itr=set.iterator();
 		
 		while(itr.hasNext()) {
 			Product pobj=itr.next();
 			System.out.println(pobj.pId+" "+pobj.pName);
+			
+			
+			
 		}
+		
+		
 	}
 
 }

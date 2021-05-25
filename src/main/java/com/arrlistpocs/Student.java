@@ -1,5 +1,7 @@
 package com.arrlistpocs;
 
+import java.util.function.BiFunction;
+
 public class Student {
 	int Sid;
 	String name;

@@ -2,6 +2,7 @@ package com.arrlistpocs;
 
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class MainListClass {
 
@@ -52,5 +53,29 @@ public class MainListClass {
 		}
 		
 		
+		 // Creating a hash set using constructor
+        Set<Student> hSet = new HashSet<Student>(studentObj);
+  
+        System.out.println("Created HashSet is");
+        for (Student s: hSet)
+        {
+        	System.out.println(s.name+"-"+s.Sid+"-"+s.Sbranch);
+        }
+		
+		
+        //converting List to Map type
+        
+        Map<Integer, String> map1 = new HashMap<>();
+     // put every value list to Map
+        for (Student st : studentObj) {
+            map1.put(st.getSid(), st.getName());
+        	
+        }
+        System.out.println(" converting LIst to MAp");
+        Set<Entry<Integer, String>> set=map1.entrySet();
+        for(Entry<Integer, String> s: set) {
+        	Integer st=s.getKey();
+        	System.out.println(st+" "+s.getValue());
+        }
 	}
 }
